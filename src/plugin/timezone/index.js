@@ -93,6 +93,8 @@ export default (o, c, d) => {
   }
 
   const proto = c.prototype
+  proto.tz = function (timezone = defaultTimezone) {
+    const target = this.toDate().toLocaleString('en-US', { timeZone: timezone || undefined })
 
   proto.tz = function (timezone = defaultTimezone) {
     const target = this.toDate().toLocaleString('en-US', { timeZone: timezone })
