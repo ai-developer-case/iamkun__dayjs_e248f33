@@ -5,12 +5,13 @@ export = plugin
 
 declare module 'dayjs' {
   interface Dayjs {
-    tz(timezone: string): Dayjs
+    tz(timezone?: string): Dayjs
   }
 
   interface DayjsTimezone {
     (date: ConfigType, timezone: string): Dayjs
     guess(): string
+    setDefault(timezone?: string): void
     setDefault(timezone?: string): void
   }
 
