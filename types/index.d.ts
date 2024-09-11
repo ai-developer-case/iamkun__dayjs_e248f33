@@ -21,10 +21,11 @@ declare namespace dayjs {
 
   class Dayjs {
     constructor (config?: ConfigType)
+          clone(): Dayjs
+    
 
     clone(): Dayjs
 
-    isValid(): boolean
 
     year(): number
 
@@ -53,6 +54,10 @@ declare namespace dayjs {
     second(): number
 
     second(value: number): Dayjs
+
+      millisecond(): number
+
+      millisecond(value: number): Dayjs
 
     millisecond(): number
 
