@@ -10,8 +10,8 @@ declare module 'dayjs' {
 
   interface DayjsTimezone {
     (date: ConfigType, timezone: string): Dayjs
-    guess(): string
-    setDefault(timezone?: string): void
+    guess(): string | null
+    setDefault(timezone: string | null): void
   }
 
   const tz: DayjsTimezone

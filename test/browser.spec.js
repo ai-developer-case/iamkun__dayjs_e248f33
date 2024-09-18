@@ -6,7 +6,7 @@ describe('Install', function () {
     if (!window.dayjs) throw new Error('No window.dayjs')
   })
 })
-
+// ahahahahaha
 describe('Core APIs', function () {
   it('Chain Methods', function () {
     expect(dayjs('2011-02-05T14:48:00.000Z')

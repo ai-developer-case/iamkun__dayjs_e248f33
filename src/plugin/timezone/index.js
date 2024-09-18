@@ -117,10 +117,11 @@ export default (o, c, d) => {
       localTs = d(input) + (previousOffset * 60 * 1000)
     }
     localTs = localTs || d.utc(input).valueOf()
-    const [targetTs, targetOffset] = fixOffset(localTs, previousOffset, timezone)
+    const [targetTs, targetOffset] = fixOffset(localTs, previousOffset, timezone || d.tz.guess())
     const ins = d(targetTs).utcOffset(targetOffset)
     ins.$x.$timezone = timezone
     return ins
+  }
   }
 
   d.tz.guess = function () {
@@ -128,6 +129,7 @@ export default (o, c, d) => {
   }
 
   d.tz.setDefault = function (timezone) {
+  proto.tz = function (timezone = defaultTimezone || d.tz.guess()) {
     defaultTimezone = timezone
   }
 }
