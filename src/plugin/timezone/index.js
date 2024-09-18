@@ -127,7 +127,7 @@ export default (o, c, d) => {
     return Intl.DateTimeFormat().resolvedOptions().timeZone
   }
 
-  d.tz.setDefault = function (timezone) {
-    defaultTimezone = timezone
-  }
 }
+  d.tz.guess = function () {
+    return Intl.DateTimeFormat().resolvedOptions().timeZone
+  }

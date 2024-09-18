@@ -241,7 +241,6 @@ describe('set Default', () => {
     expect(tokyo.format()).toBe('2014-06-01T12:00:00+09:00')
     expect(tokyo.format('Z')).toBe('+09:00')
     expect(tokyo.valueOf()).toBe(1401591600000)
-  })
 
   it('override default timezone in proto.tz', () => {
     dayjs.tz.setDefault(NY)
@@ -258,6 +257,7 @@ describe('set Default', () => {
     expect(tokyo.format('Z')).toBe('+09:00')
     expect(tokyo.valueOf()).toBe(1401591600000)
   })
+})
 })
 
 describe('Get offsetName', () => {
